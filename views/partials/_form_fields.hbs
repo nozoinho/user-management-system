@@ -1,44 +1,96 @@
-<p>
-  <label>First Name</label>
-  <input class="w3-input" type="text" name="firstName" value="{{user.firstName}}" required>
-</p>
-<p>
-  <label>Last Name</label>
-  <input class="w3-input" type="text" name="lastName" value="{{user.lastName}}" required>
-</p>
-<p>
-  <label>Date of Birth</label>
-  <input class="w3-input" type="date" name="dateOfBirth" value="{{user.dateOfBirth}}">
-</p>
-<p>
-  <label>Address 1</label>
-  <input class="w3-input" type="text" name="address1" value="{{user.address1}}">
-</p>
-<p>
-  <label>Address 2</label>
-  <input class="w3-input" type="text" name="address2" value="{{user.address2}}">
-</p>
-<p>
-  <label>City</label>
-  <input class="w3-input" type="text" name="city" value="{{user.city}}">
-</p>
-<p>
-  <label>Postal Code</label>
-  <input class="w3-input" type="text" name="postalCode" value="{{user.postalCode}}">
-</p>
-<p>
-  <label>Country</label>
-  <input class="w3-input" type="text" name="country" value="{{user.country}}">
-</p>
-<p>
-  <label>Phone Number</label>
-  <input class="w3-input" type="text" name="phoneNumber" value="{{user.phoneNumber}}">
-</p>
-<p>
-  <label>Email</label>
-  <input class="w3-input" type="email" name="email" value="{{user.email}}">
-</p>
-<p>
-  <label>User Notes</label>
-  <textarea class="w3-input" name="userNotes">{{user.userNotes}}</textarea>
-</p>
+<div class="row gx-3 mb-3">
+  <div class="col-md-4">
+    <label for="firstName" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      First Name
+    </label>
+    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="firstName" name="firstName" value="{{user.firstName}}" required>
+  </div>
+  <div class="col-md-4">
+    <label for="lastName" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      Last Name
+    </label>
+    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="lastName" name="lastName" value="{{user.lastName}}" required>
+  </div>
+  <div class="col-md-4">
+    <label for="dateOfBirth" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      Date of Birth
+    </label>
+    <input type="date" class="form-control text-dark fw-bold {{#if user._id}}bg-warning{{else}}bg-info{{/if}} shadow-sm rounded ps-4" 
+           id="dateOfBirth" name="dateOfBirth" value="{{user.dateOfBirth}}">
+  </div>
+</div>
+
+<div class="row gx-3 mb-3">
+  <div class="col-md-6">
+    <label for="address1" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      Address 1
+    </label>
+    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="address1" name="address1" value="{{user.address1}}">
+  </div>
+  <div class="col-md-6">
+    <label for="address2" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      Address 2
+    </label>
+    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="address2" name="address2" value="{{user.address2}}">
+  </div>
+</div>
+
+<div class="row gx-3 mb-3">
+  <div class="col-md-4">
+    <label for="city" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      City
+    </label>
+    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="city" name="city" value="{{user.city}}">
+  </div>
+  <div class="col-md-4">
+    <label for="postalCode" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      Postal Code
+    </label>
+    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="postalCode" name="postalCode" value="{{user.postalCode}}">
+  </div>
+  <div class="col-md-4">
+    <label for="country" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      Country
+    </label>
+    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="country" name="country" value="{{user.country}}">
+  </div>
+</div>
+
+<div class="row gx-3 mb-3">
+  <div class="col-md-4">
+    <label for="phoneNumber" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      Phone Number
+    </label>
+    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="phoneNumber" name="phoneNumber" value="{{user.phoneNumber}}">
+  </div>
+  <div class="col-md-8">
+    <label for="email" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      Email
+    </label>
+    <input type="email" class="form-control bg-dark text-light shadow-sm rounded" 
+           id="email" name="email" value="{{user.email}}">
+  </div>
+</div>
+
+<div class="mb-3">
+  <label for="userNotes" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+    User Notes
+  </label>
+  <textarea class="form-control bg-dark text-light shadow-sm rounded" 
+            id="userNotes" name="userNotes" rows="3">{{user.userNotes}}</textarea>
+</div>
+
+<div class="d-flex justify-content-start mb-4">
+  <button type="submit" class="btn {{#if user._id}}btn-outline-warning{{else}}btn-outline-info{{/if}} btn-lg fw-semibold shadow-sm">
+    <i class="bi {{#if user._id}}bi-pencil-square{{else}}bi-check2-circle{{/if}} me-2"></i>
+    {{#if user._id}}Update User{{else}}Add User{{/if}}
+  </button>
+</div>

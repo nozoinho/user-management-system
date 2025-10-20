@@ -1,9 +1,9 @@
-<h2>Edit User</h2>
-<a href="/users" class="w3-button w3-gray">Back to User List</a>
+<h2 class="text-center mb-4 text-warning">Edit User</h2>
+
+<div class="d-flex justify-content-start mb-4">
+  <a href="/users" class="btn btn-warning">Back to User List</a>
+</div>
 
 <form action="/users/{{user._id}}?_method=PUT" method="POST" class="w3-container w3-card w3-padding w3-margin-top">
   {{> _form_fields}}
-  <p>
-    <button type="submit" class="w3-button w3-yellow">Update User</button>
-  </p>
 </form>

@@ -7,22 +7,22 @@
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-dark text-light">
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
     <div class="container">
-      <a class="navbar-brand" href="/users">User Management</a>
+      <a class="navbar-brand fw-bold" href="/users">User Management</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/users">Users</a>
+            <a class="nav-link text-light fw-semibold" href="/users">Users</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/users/new">Add User</a>
+            <a class="nav-link btn btn-outline-light btn-sm rounded-pill ms-2" href="/users/new">Add User</a>
           </li>
         </ul>
       </div>
@@ -31,7 +31,7 @@
 
   <!-- Main container -->
   <div class="container">
-    {{{body}}} <!-- This is where each page content will render -->
+    {{{body}}} <!-- Render content of each page -->
   </div>
 
   <!-- Bootstrap 5 JS bundle -->
