@@ -1,5 +1,5 @@
 <div class="container my-4">
-  <h2 class="text-center mb-4 text-info">Users List</h2>
+  <h2 class="text-center mb-4 text-info">User List</h2>
 
   <div class="d-flex justify-content-start mb-3">
     <a href="/users/new" class="btn btn-outline-info btn-lg">
@@ -7,47 +7,53 @@
     </a>
   </div>
 
-  <div class="table-responsive shadow-lg rounded-2 overflow-hidden">
-    <table class="table table-dark table-hover align-middle table-sm text-nowrap small mb-0">
-      <thead class="table-info text-dark text-center">
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Date of Birth</th>
-          <th>City</th>
-          <th>Postal Code</th>
-          <th>Country</th>
-          <th>Phone</th>
-          <th>Email</th>
-          <th>User Notes</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody class="text-center">
-        {{#each users}}
-        <tr class="bg-dark bg-opacity-75">
-          <td class="text-info">{{this.firstName}}</td>
-          <td class="text-info">{{this.lastName}}</td>
-          <td class="text-info">{{this.dateOfBirth}}</td>
-          <td class="text-info">{{this.city}}</td>
-          <td class="text-info">{{this.postalCode}}</td>
-          <td class="text-info">{{this.country}}</td>
-          <td class="text-info">{{this.phoneNumber}}</td>
-          <td class="text-info">{{this.email}}</td>
-          <td class="text-info text-wrap text-break" style="max-width: 250px;">{{this.userNotes}}</td>
-          <td>
-            <a href="/users/{{this._id}}/edit" class="btn btn-outline-warning btn-sm me-1">
-              <i class="bi bi-pencil-square"></i> Edit
-            </a>
-            <button type="submit" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-user-id="{{this._id}}" data-user-name="{{this.firstName}} {{this.lastName}}">
-              <i class="bi bi-trash3"></i> Delete
-            </button>
-          </td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
+  {{#if users.length}}
+    <div class="table-responsive shadow-lg rounded-2 overflow-hidden">
+      <table class="table table-dark table-hover align-middle table-sm text-nowrap small mb-0">
+        <thead class="table-info text-dark text-center">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>User Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          {{#each users}}
+          <tr class="bg-dark bg-opacity-75">
+            <td class="text-info">{{this.firstName}}</td>
+            <td class="text-info">{{this.lastName}}</td>
+            <td class="text-info">{{this.dateOfBirth}}</td>
+            <td class="text-info">{{this.city}}</td>
+            <td class="text-info">{{this.postalCode}}</td>
+            <td class="text-info">{{this.country}}</td>
+            <td class="text-info">{{this.phoneNumber}}</td>
+            <td class="text-info">{{this.email}}</td>
+            <td class="text-info text-wrap text-break" style="max-width: 250px;">{{this.userNotes}}</td>
+            <td>
+              <a href="/users/{{this._id}}/edit" class="btn btn-outline-warning btn-sm me-1">
+                <i class="bi bi-pencil-square"></i> Edit
+              </a>
+              <button type="submit" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-user-id="{{this._id}}" data-user-name="{{this.firstName}} {{this.lastName}}">
+                <i class="bi bi-trash3"></i> Delete
+              </button>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{else}}
+    <div class="alert alert-info text-center py-2 px-4" role="alert">
+      <span class="fs-6 mb-0">There are currently no users to display.</span>
+    </div>
+  {{/if}}
 </div>
 
 <!-- Modal Bootstrap -->
