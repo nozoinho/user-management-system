@@ -1,96 +1,135 @@
-<div class="row gx-3 mb-3">
-  <div class="col-md-4">
-    <label for="firstName" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      First Name
-    </label>
-    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="firstName" name="firstName" value="{{user.firstName}}" required>
+<!-- First Row: First Name, Last Name, Date of Birth -->
+  <div class="row gx-3 mb-3">
+    <div class="col-md-4">
+      <label for="firstName" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        First Name
+      </label>
+      <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+             id="firstName" name="firstName" value="{{user.firstName}}" required>
+      <div class="invalid-feedback">
+        Please enter a first name.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="lastName" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        Last Name
+      </label>
+      <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+             id="lastName" name="lastName" value="{{user.lastName}}" required>
+      <div class="invalid-feedback">
+        Please enter a last name.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="dateOfBirth" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        Date of Birth
+      </label>
+      <input type="date" class="form-control {{#if user._id}}bg-warning text-dark fw-bold{{else}}bg-info text-dark fw-bold{{/if}} shadow-sm rounded ps-4"
+             id="dateOfBirth" name="dateOfBirth" value="{{user.dateOfBirth}}" required>
+      <div class="invalid-feedback">
+        Please select a date of birth.
+      </div>
+    </div>
   </div>
-  <div class="col-md-4">
-    <label for="lastName" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      Last Name
-    </label>
-    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="lastName" name="lastName" value="{{user.lastName}}" required>
-  </div>
-  <div class="col-md-4">
-    <label for="dateOfBirth" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      Date of Birth
-    </label>
-    <input type="date" class="form-control text-dark fw-bold {{#if user._id}}bg-warning{{else}}bg-info{{/if}} shadow-sm rounded ps-4" 
-           id="dateOfBirth" name="dateOfBirth" value="{{user.dateOfBirth}}">
-  </div>
-</div>
 
-<div class="row gx-3 mb-3">
-  <div class="col-md-6">
-    <label for="address1" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      Address 1
-    </label>
-    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="address1" name="address1" value="{{user.address1}}">
+  <!-- Second Row: Address 1, Address 2 -->
+  <div class="row gx-3 mb-3">
+    <div class="col-md-6">
+      <label for="address1" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        Address 1
+      </label>
+      <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+             id="address1" name="address1" value="{{user.address1}}" required>
+      <div class="invalid-feedback">
+        Please enter address 1.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="address2" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        Address 2
+      </label>
+      <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+             id="address2" name="address2" value="{{user.address2}}">
+    </div>
   </div>
-  <div class="col-md-6">
-    <label for="address2" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      Address 2
-    </label>
-    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="address2" name="address2" value="{{user.address2}}">
-  </div>
-</div>
 
-<div class="row gx-3 mb-3">
-  <div class="col-md-4">
-    <label for="city" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      City
-    </label>
-    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="city" name="city" value="{{user.city}}">
+  <!-- Third Row: City, Postal Code, Country -->
+  <div class="row gx-3 mb-3">
+    <div class="col-md-4">
+      <label for="city" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        City
+      </label>
+      <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+             id="city" name="city" value="{{user.city}}" required>
+      <div class="invalid-feedback">
+        Please enter a city.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="postalCode" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        Postal Code (e.g., M5V 2T6)
+      </label>
+      <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+             id="postalCode" name="postalCode" value="{{user.postalCode}}" required>
+      <div class="invalid-feedback">
+        Please enter a postal code.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="country" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        Country
+      </label>
+      <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+             id="country" name="country" value="{{user.country}}" required>
+      <div class="invalid-feedback">
+        Please enter a country.
+      </div>
+    </div>
   </div>
-  <div class="col-md-4">
-    <label for="postalCode" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      Postal Code
-    </label>
-    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="postalCode" name="postalCode" value="{{user.postalCode}}">
-  </div>
-  <div class="col-md-4">
-    <label for="country" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      Country
-    </label>
-    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="country" name="country" value="{{user.country}}">
-  </div>
-</div>
 
-<div class="row gx-3 mb-3">
-  <div class="col-md-4">
-    <label for="phoneNumber" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      Phone Number
-    </label>
-    <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="phoneNumber" name="phoneNumber" value="{{user.phoneNumber}}">
+  <!-- Fourth Row: Phone Number, Email -->
+  <div class="row gx-3 mb-3">
+    <div class="col-md-4">
+      <label for="phoneNumber" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        Phone Number (e.g., +1 4165551234)
+      </label>
+      <input type="text" class="form-control bg-dark text-light shadow-sm rounded" 
+             id="phoneNumber" name="phoneNumber" value="{{user.phoneNumber}}" pattern="^\+\d{1,3}\s\d{4,14}$" title="Enter phone number with country code, e.g., +1 416 555 1234" required>
+      <div class="invalid-feedback">
+        Please enter a valid phone number with country code
+      </div>
+    </div>
+    <div class="col-md-8">
+      <label for="email" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+        Email
+      </label>
+      <input type="email" class="form-control bg-dark text-light shadow-sm rounded {{#if emailError}}is-invalid{{/if}}" 
+             id="email" name="email" value="{{user.email}}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+      {{#if emailError}}
+        <div class="invalid-feedback">
+          {{emailError}}
+        </div>
+      {{else}}
+        <div class="invalid-feedback">
+          Please emter a valid email
+        </div>
+      {{/if}}
+    </div>
   </div>
-  <div class="col-md-8">
-    <label for="email" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-      Email
+
+  <!-- User Notes -->
+  <div class="mb-3">
+    <label for="userNotes" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
+      User Notes
     </label>
-    <input type="email" class="form-control bg-dark text-light shadow-sm rounded" 
-           id="email" name="email" value="{{user.email}}">
+    <textarea class="form-control bg-dark text-light shadow-sm rounded" 
+              id="userNotes" name="userNotes" rows="3">{{user.userNotes}}</textarea>
   </div>
-</div>
 
-<div class="mb-3">
-  <label for="userNotes" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-    User Notes
-  </label>
-  <textarea class="form-control bg-dark text-light shadow-sm rounded" 
-            id="userNotes" name="userNotes" rows="3">{{user.userNotes}}</textarea>
-</div>
-
-<div class="d-flex justify-content-start mb-4">
-  <button type="submit" class="btn {{#if user._id}}btn-outline-warning{{else}}btn-outline-info{{/if}} btn-lg fw-semibold shadow-sm">
-    <i class="bi {{#if user._id}}bi-pencil-square{{else}}bi-check2-circle{{/if}} me-2"></i>
-    {{#if user._id}}Update User{{else}}Add User{{/if}}
-  </button>
-</div>
+  <!-- Submit Button -->
+  <div class="d-flex justify-content-start mb-4">
+    <button type="submit" class="btn {{#if user._id}}btn-outline-warning{{else}}btn-outline-info{{/if}} btn-lg fw-semibold shadow-sm">
+      <i class="bi {{#if user._id}}bi-pencil-square{{else}}bi-check2-circle{{/if}} me-2"></i>
+      {{#if user._id}}Update User{{else}}Add User{{/if}}
+    </button>
+  </div>

@@ -45,8 +45,14 @@ router.post('/', async (req, res) => {
     await newUser.save();
     res.redirect('/users');
   } catch (err) {
-    console.error(err);
-    res.status(500).send('Error creating user');
+    if (err.code === 11000 && err.keyPattern.email) { // Mongo duplicate
+      res.render('users/new', {
+        user: req.body,
+        emailError: 'This email is already registered.'
+      });
+    } else {
+      next(err);
+    }
   }
 });
 
@@ -86,8 +92,27 @@ router.put('/:id', async (req, res) => {
     });
     res.redirect('/users');
   } catch (err) {
-    console.error(err);
-    res.status(500).send('Error updating user');
+    if (err.code === 11000 && err.keyPattern.email) { // Mongo duplicate
+      res.render('users/edit', {
+        user: { 
+          _id: req.params.id, 
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          dateOfBirth: req.body.dateOfBirth,
+          address1: req.body.address1,
+          address2: req.body.address2,
+          city: req.body.city,
+          postalCode: req.body.postalCode,
+          country: req.body.country,
+          phoneNumber: req.body.phoneNumber,
+          email: req.body.email,
+          userNotes: req.body.userNotes
+        },
+        emailError: 'This email is already registered.'
+      });
+    } else {
+      next(err);
+    }
   }
 });
 
