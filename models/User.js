@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
   city: { type: String, required: true },
   postalCode: { type: String },
   country: { type: String, required: true },
-  phoneNumber: { type: String, required: true },
+  phoneNumber: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   userNotes: { type: String }
 }, { timestamps: true });
