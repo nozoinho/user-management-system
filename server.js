@@ -21,6 +21,12 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
+
+// Register helper eq
+hbs.handlebars.registerHelper('eq', function(a, b) {
+  return a === b;
+});
+
 // Middlewares
 app.use(express.urlencoded({ extended: true })); // Parse form data
 app.use(methodOverride('_method')); // Enable PUT and DELETE via forms

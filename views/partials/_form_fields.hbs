@@ -5,9 +5,9 @@
         First Name
       </label>
       <input type="text" class="form-control bg-dark text-light rounded" 
-             id="firstName" name="firstName" value="{{user.firstName}}" required>
+             id="firstName" name="firstName" value="{{user.firstName}}" pattern="[A-Za-z\s'-]+" required>
       <div class="invalid-feedback">
-        Please enter a first name.
+        Please enter a valid first name.
       </div>
     </div>
     <div class="col-md-4">
@@ -15,9 +15,9 @@
         Last Name
       </label>
       <input type="text" class="form-control bg-dark text-light rounded" 
-             id="lastName" name="lastName" value="{{user.lastName}}" required>
+             id="lastName" name="lastName" value="{{user.lastName}}" pattern="[A-Za-z\s'-]+" required>
       <div class="invalid-feedback">
-        Please enter a last name.
+        Please enter a valid last name.
       </div>
     </div>
     <div class="col-md-4">
@@ -41,7 +41,7 @@
       <input type="text" class="form-control bg-dark text-light rounded" 
              id="address1" name="address1" value="{{user.address1}}" required>
       <div class="invalid-feedback">
-        Please enter address 1.
+        Please enter an address.
       </div>
     </div>
     <div class="col-md-6">
@@ -60,29 +60,51 @@
         City
       </label>
       <input type="text" class="form-control bg-dark text-light rounded" 
-             id="city" name="city" value="{{user.city}}" required>
+             id="city" name="city" value="{{user.city}}" pattern="[A-Za-z\s'-]+" required>
       <div class="invalid-feedback">
-        Please enter a city.
+        Please enter a valid city.
       </div>
     </div>
     <div class="col-md-4">
       <label for="postalCode" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
-        Postal Code (e.g., M5V 2T6)
+        Postal Code
       </label>
       <input type="text" class="form-control bg-dark text-light rounded" 
-             id="postalCode" name="postalCode" value="{{user.postalCode}}" required>
+             id="postalCode" name="postalCode" value="{{user.postalCode}}" pattern="[A-Za-z0-9 ]{3,10}" required>
       <div class="invalid-feedback">
-        Please enter a postal code.
+        Please enter a valid postal code.
       </div>
     </div>
     <div class="col-md-4">
       <label for="country" class="form-label fw-semibold {{#if user._id}}text-warning{{else}}text-info{{/if}}">
         Country
       </label>
-      <input type="text" class="form-control bg-dark text-light rounded" 
-             id="country" name="country" value="{{user.country}}" required>
+      <select class="form-select {{#if user._id}}bg-warning-subtle text-dark fw-bold{{else}}bg-info-subtle text-dark fw-bold{{/if}} rounded" 
+              id="country" name="country" required>
+        <option value="" disabled {{#unless user.country}}selected{{/unless}}>Select a country</option>
+        <option value="Canada" {{#if (eq user.country "Canada")}}selected{{/if}}>Canada</option>
+        <option value="United States" {{#if (eq user.country "United States")}}selected{{/if}}>United States</option>
+        <option value="Mexico" {{#if (eq user.country "Mexico")}}selected{{/if}}>Mexico</option>
+        <option value="United Kingdom" {{#if (eq user.country "United Kingdom")}}selected{{/if}}>United Kingdom</option>
+        <option value="Germany" {{#if (eq user.country "Germany")}}selected{{/if}}>Germany</option>
+        <option value="France" {{#if (eq user.country "France")}}selected{{/if}}>France</option>
+        <option value="Italy" {{#if (eq user.country "Italy")}}selected{{/if}}>Italy</option>
+        <option value="Spain" {{#if (eq user.country "Spain")}}selected{{/if}}>Spain</option>
+        <option value="Japan" {{#if (eq user.country "Japan")}}selected{{/if}}>Japan</option>
+        <option value="China" {{#if (eq user.country "China")}}selected{{/if}}>China</option>
+        <option value="India" {{#if (eq user.country "India")}}selected{{/if}}>India</option>
+        <option value="Brazil" {{#if (eq user.country "Brazil")}}selected{{/if}}>Brazil</option>
+        <option value="Argentina" {{#if (eq user.country "Argentina")}}selected{{/if}}>Argentina</option>
+        <option value="South Africa" {{#if (eq user.country "South Africa")}}selected{{/if}}>South Africa</option>
+        <option value="Australia" {{#if (eq user.country "Australia")}}selected{{/if}}>Australia</option>
+        <option value="New Zealand" {{#if (eq user.country "New Zealand")}}selected{{/if}}>New Zealand</option>
+        <option value="Netherlands" {{#if (eq user.country "Netherlands")}}selected{{/if}}>Netherlands</option>
+        <option value="Sweden" {{#if (eq user.country "Sweden")}}selected{{/if}}>Sweden</option>
+        <option value="Norway" {{#if (eq user.country "Norway")}}selected{{/if}}>Norway</option>
+        <option value="Switzerland" {{#if (eq user.country "Switzerland")}}selected{{/if}}>Switzerland</option>
+      </select>
       <div class="invalid-feedback">
-        Please enter a country.
+        Please select a country.
       </div>
     </div>
   </div>
