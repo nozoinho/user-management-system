@@ -10,24 +10,28 @@
 <body class="bg-dark text-light">
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="/users">User Management</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-light fw-semibold" href="/users">Users</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-light btn-sm rounded-pill ms-2" href="/users/new">Add User</a>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm mb-4">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary fs-3" href="/users">
+      <i class="bi bi-people-fill me-2"></i>User Management
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link text-info fw-semibold fs-4" href="/users">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-primary btn-sm rounded-pill ms-2 px-3" href="/users/new">
+            <i class="bi bi-person-plus-fill me-1"></i>Add User
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <!-- Main container -->
   <div class="container">
