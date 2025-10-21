@@ -1,28 +1,13 @@
+<!-- Page title for adding a new user -->
 <h2 class="text-center mb-4 text-info">Add New User</h2>
 
+<!-- Button to return to the users list -->
 <div class="d-flex justify-content-start mb-4">
   <a href="/users" class="btn btn-primary">Back to Users List</a>
 </div>
 
+<!-- Form to add a new user, using Bootstrap validation -->
 <form class="needs-validation" novalidate action="/users" method="POST" class="w3-container w3-card w3-padding w3-margin-top">
   {{> _form_fields}}
 </form>
 
-<script>
-  
-  (function () {
-    'use strict'
-    const forms = document.querySelectorAll('.needs-validation')
-
-    Array.from(forms).forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()  
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated') 
-      }, false)
-    })
-  })()
-</script>

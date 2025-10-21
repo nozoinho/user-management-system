@@ -1,28 +1,13 @@
+<!-- Page title for editing a user -->
 <h2 class="text-center mb-4 text-warning">Edit User</h2>
 
+<!-- Navigation button to return to user list -->
 <div class="d-flex justify-content-start mb-4">
   <a href="/users" class="btn btn-warning">Back to Users List</a>
 </div>
 
+<!-- Edit User Form -->
 <form class="needs-validation" novalidate action="/users/{{user._id}}?_method=PUT" method="POST" class="w3-container w3-card w3-padding w3-margin-top">
-  {{> _form_fields}}
+ <!-- Include shared form fields partial -->
+ {{> _form_fields}}
 </form>
-
-<script>
-  
-  (function () {
-    'use strict'
-    const forms = document.querySelectorAll('.needs-validation')
-
-    Array.from(forms).forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()  
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated') 
-      }, false)
-    })
-  })()
-</script>
