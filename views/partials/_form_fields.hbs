@@ -177,12 +177,4 @@
               id="userNotes" name="userNotes" rows="3">{{user.userNotes}}</textarea>
   </div>
 
-  <!-- ===========================
-     Submit button
-  =========================== -->
-  <div class="d-grid gap-2 col-3 mx-auto mb-4">
-    <button type="submit" class="btn {{#if user._id}}btn-outline-warning{{else}}btn-outline-info{{/if}} btn-lg fw-semibold">
-      <i class="bi {{#if user._id}}bi-pencil-square{{else}}bi-check2-circle{{/if}} me-2"></i>
-      {{#if user._id}}Update User{{else}}Add User{{/if}}
-    </button>
-  </div>
+  

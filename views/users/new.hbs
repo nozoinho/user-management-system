@@ -8,6 +8,16 @@
 
 <!-- Form to add a new user, using Bootstrap validation -->
 <form class="needs-validation" novalidate action="/users" method="POST" class="w3-container w3-card w3-padding w3-margin-top">
+  
+  <!-- Partial that contains the form fields (name, email, etc.) -->
   {{> _form_fields}}
+
+  <div class="d-flex justify-content-center gap-5 mb-4">
+    <!-- Add User button -->
+    <button type="submit" class="btn btn-outline-info btn-lg fw-semibold" >
+      <i class="bi bi-check2-circle me-2"></i>
+      Add User
+    </button>
+  </div>
 </form>
 

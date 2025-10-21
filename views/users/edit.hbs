@@ -6,8 +6,79 @@
   <a href="/users" class="btn btn-warning">Back to Users List</a>
 </div>
 
-<!-- Edit User Form -->
-<form class="needs-validation" novalidate action="/users/{{user._id}}?_method=PUT" method="POST" class="w3-container w3-card w3-padding w3-margin-top">
- <!-- Include shared form fields partial -->
- {{> _form_fields}}
+<!-- Main form for updating and deleting user data, using Bootstrap -->
+<form class="needs-validation w3-container w3-card w3-padding w3-margin-top" 
+      novalidate 
+      action="/users/{{user._id}}?_method=PUT" 
+      method="POST">
+  
+  <!-- Partial that contains the form fields (name, email, etc.) -->
+  {{> _form_fields}}
+
+  <div class="d-flex justify-content-center mt-4 mb-4 gap-5">
+    
+    <!-- Update button inside the form that submits user changes -->
+    <button type="submit" class="btn btn-outline-warning btn-lg fw-semibold">
+      <i class="bi bi-pencil-square me-2"></i>
+      Update User
+    </button>
+
+    <!-- Delete button that opens the confirmation modal -->
+    <button type="button" class="btn btn-outline-danger btn-lg fw-semibold"
+            data-bs-toggle="modal" 
+            data-bs-target="#confirmDeleteModal"
+            data-user-id="{{user._id}}"
+            data-user-name="{{user.firstName}} {{user.lastName}}">
+      <i class="bi bi-trash me-2"></i>
+      Delete User
+    </button>
+
+  </div>
 </form>
+
+<!-- Bootstrap modal to confirm user deletion -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white border-warning">
+      
+      <div class="modal-header border-warning">
+        <h5 class="modal-title fw-semibold" id="confirmDeleteModalLabel">Confirm Delete</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body showing the name of the user to delete -->
+      <div class="modal-body">
+        Are you sure you want to delete <span id="userNameToDelete" class="fw-bold text-warning"></span>?
+      </div>
+
+      <!-- Modal footer with Cancel and Confirm buttons -->
+      <div class="modal-footer border-warning">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <!-- Form that performs the DELETE when confirmed -->
+        <form id="confirmDeleteForm" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger fw-semibold">Yes, Delete</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Script to dynamically fill modal content before showing it -->
+<script>
+  const confirmDeleteModal = document.getElementById('confirmDeleteModal');
+  const confirmDeleteForm = document.getElementById('confirmDeleteForm');
+  const userNameToDelete = document.getElementById('userNameToDelete');
+
+  // Event triggered just before the modal is shown
+  confirmDeleteModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    const userId = button.getAttribute('data-user-id');
+    const userName = button.getAttribute('data-user-name');
+    
+    // Fill the modal content
+    userNameToDelete.textContent = userName;
+    confirmDeleteForm.action = `/users/${userId}?_method=DELETE`;
+  });
+</script>
