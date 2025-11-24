@@ -58,12 +58,6 @@ In the project directory, run one of the following commands:
 node server.js
 ```
 
-Or, if you have **nodemon** installed:
-
-```bash
-nodemon server.js
-```
-
 ---
 
 ### Access the App
