@@ -45,8 +45,6 @@ If you are using **MongoDB Atlas**, make sure your IP address is **whitelisted**
 | `MONGODB_URI`  | MongoDB connection string for your database             |
 | `PORT`         | Port where the app will run (default: `3000`)           |
 
-```
-
 ---
 
 ## 🚀 How to Run the App
