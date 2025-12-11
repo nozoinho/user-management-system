@@ -10,8 +10,6 @@ This is a simple **User Management System** built with the **MERN stack**:
 
 The app allows you to add, edit, view, and delete users with personal and contact information. It uses **Bootstrap 5** for styling and provides **real-time form validation**.
 
-> For detailed usage examples and screenshots, see `Screenshots_UserManagementSystem_MERN.pdf`.
-
 ---
 
 ## Installation
@@ -89,8 +87,6 @@ project/
 ├── vite.config.js
 └── README.md        # This summary file
 ```
-
-> For complete instructions and detailed usage, refer to `User_Guide_UserManagementSystem_MERN.md`.
 
 ---
 
