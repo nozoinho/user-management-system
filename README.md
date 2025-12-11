@@ -1,74 +1,98 @@
-# 🧑‍💼 User Management System
+# User Management System MERN
 
-## 📘 Project Description
-This is a simple **User Management System** built with **Node.js**, **Express**, **Handlebars**, and **MongoDB**.  
+## Project Overview
+This is a simple **User Management System** built with the **MERN stack**:
 
-It allows you to:
-- Add new users with personal and contact information.  
-- Edit existing users.  
-- Delete users.  
-- View a list of all users with their details.  
+- **MongoDB**: Database for storing user information
+- **Express.js**: Backend API
+- **React.js**: Frontend UI
+- **Node.js**: Runtime environment
 
-The app uses **Bootstrap 5** for styling and provides **client-side validation** for form inputs.
+The app allows you to add, edit, view, and delete users with personal and contact information. It uses **Bootstrap 5** for styling and provides **real-time form validation**.
+
+> For detailed usage examples and screenshots, see `Screenshots_UserManagementSystem_MERN.pdf`.
 
 ---
 
-## ⚙️ Setup Instructions
+## Installation
 
-### 1. Install Dependencies
-Make sure you have **Node.js** installed.  
-Then, in your project directory, run:
+### Backend
+1. Navigate to the backend folder:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file with:
+   ```
+   MONGODB_URI=<Your MongoDB URI>
+   PORT=3000
+   ```
 
-```bash
-npm install
+### Frontend
+1. Navigate to the frontend folder:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file with:
+   ```
+   VITE_API_URL=http://localhost:3000
+   ```
+
+---
+
+## Running the Application
+
+- **Backend**:
+  ```bash
+  cd backend
+  npm start
+  ```
+  Runs on [http://localhost:3000](http://localhost:3000)
+
+- **Frontend**:
+  ```bash
+  cd frontend
+  npm run dev
+  ```
+  Runs on [http://localhost:5173](http://localhost:5173)
+
+> Make sure both servers are running to use the application.
+
+---
+
+## Project Structure (Key Files)
+
+```
+project/
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│   ├── .env
+│   ├── /routes
+│   └── /models
+├── frontend/
+│   ├── main.jsx
+│   ├── App.jsx
+│   ├── /pages       # Login, UserList, CreateUser, EditUser
+│   ├── /components  # Layout, UserForm
+│   ├── /styles      # CSS files
+│   ├── .env
+│   └── package.json
+├── eslint.config.js
+├── vite.config.js
+└── README.md        # This summary file
 ```
 
----
-
-### 2. Create a `.env` File
-In the project root, create a file named `.env` with the following content:
-
-```
-MONGODB_URI=<Your MongoDB Cluster URI>
-PORT=3000
-```
-
-Ensure MongoDB is accessible using the provided URI.  
-If you are using **MongoDB Atlas**, make sure your IP address is **whitelisted**.
+> For complete instructions and detailed usage, refer to `User_Guide_UserManagementSystem_MERN.md`.
 
 ---
 
-### 3. Environment Variables
+**End of README**
 
-| Variable       | Description                                             |
-|----------------|---------------------------------------------------------|
-| `MONGODB_URI`  | MongoDB connection string for your database             |
-| `PORT`         | Port where the app will run (default: `3000`)           |
-
----
-
-## 🚀 How to Run the App
-
-### Start the Server
-In the project directory, run one of the following commands:
-
-```bash
-node server.js
-```
-
----
-
-### Access the App
-Once the server is running, open your browser and go to:
-
-👉 [http://localhost:3000/users](http://localhost:3000/users)
-
----
-
-## 🧭 Using the App
-1. Click **“Add New User”** to create a new user.  
-2. Fill in the form with valid inputs.  
-3. Click **“Add User”** or **“Update User”** to save changes.  
-4. Use the **Edit** and **Delete** buttons in the users list to modify or remove users.
-
----

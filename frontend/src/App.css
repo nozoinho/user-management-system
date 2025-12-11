@@ -1,0 +1,80 @@
+
+/* ===============================
+   Global dark background for the entire app
+   Ensures uniform dark theme across pages
+   =============================== */
+body, html, #root, .App, .container, .container-fluid {
+  background-color: #0d1117 !important;
+  color: #cfe8ff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Global footer styling */
+footer {
+  background-color: #0d1117 !important;
+  color: #88bfff;
+}
+
+/* Ensure Bootstrap rows and columns don't have light backgrounds */
+.row, .col, .col-* {
+  background-color: transparent;
+}
+
+/* App container settings */
+#root, .App {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #0c0e18 !important;
+  color: #cfe8ff !important;
+}
+
+/* Logo styling */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+/* Logo hover glow effects */
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Logo spin animation */
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Card styling for content blocks */
+.card {
+  padding: 2em;
+  background: rgba(12, 14, 24, 0.75);
+  border: 1px solid rgba(0, 120, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 150, 255, 0.1);
+  border-radius: 12px;
+}
+
+/* Futuristic button styling */
+.btn-futuristic {
+  background: linear-gradient(45deg, #0077ff, #00c6ff);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #3fa9ff;
+  transition: 0.2s;
+}
+
+/* Hover effect for futuristic buttons */
+.btn-futuristic:hover {
+  scale: 1.05;
+  box-shadow: 0 0 15px #67c1ff;
+}

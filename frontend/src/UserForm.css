@@ -1,0 +1,311 @@
+.userform-container {
+  max-width: 900px;
+  margin: auto;
+  color: #00f0ff;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* -------------------- */
+/*   TITLES BASED ON MODE */
+/* -------------------- */
+
+.text-cyan {
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+.text-yellow {
+  color: #ffdd55;
+  text-shadow: 0 0 10px #ffdd55;
+}
+
+/* ---------------------------- */
+/*   FUTURISTIC INPUTS - CREATE MODE (BLUE) */
+/* ---------------------------- */
+
+.futuristic-input.create-mode {
+  background-color: #0d1117 !important;
+  color: #00f0ff !important;
+  border: 1px solid #00eaff !important;
+  border-radius: 0.5rem;
+}
+
+.futuristic-input.create-mode:focus {
+  border-color: #00eaff !important;
+  box-shadow: 0 0 12px #00eaff80;
+}
+
+/* ---------------------------- */
+/*   FUTURISTIC INPUTS - EDIT MODE (YELLOW) */
+/* ---------------------------- */
+
+.futuristic-input.edit-mode {
+  background-color: #1a1a0f !important;
+  color: #ffe680 !important;
+  border: 1px solid #ffdd55 !important;
+  border-radius: 0.5rem;
+}
+
+.futuristic-input.edit-mode:focus {
+  border-color: #ffdd55 !important;
+  box-shadow: 0 0 12px #ffdd5577;
+}
+
+/* -------------------------- */
+/*   ADD BUTTON - CREATE USER  */
+/* -------------------------- */
+
+.btn-add-user {
+  background: linear-gradient(90deg, #3399ff, #66ccff);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.8rem 2.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-add-user:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(51, 153, 255, 0.7);
+}
+
+
+/* ------------------------ */
+/*   DELETE BUTTON - USER    */
+/* ------------------------ */
+
+.btn-edit-user {
+  background: linear-gradient(90deg, #ffdd55, #ffea88);
+  color: #111;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.8rem 2.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 0 10px #ffdd5566;
+}
+
+.btn-edit-user:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #ffdd5599;
+}
+
+
+/* ------------------------ */
+/*   DELETE BUTTON - USER    */
+/* ------------------------ */
+
+.btn-delete-user {
+  background: linear-gradient(90deg, #ff3b3b, #ff6b6b);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.8rem 2.2rem;
+  border-radius: 0.6rem;
+  transition: transform 0.2s, box-shadow 0.3s;
+  text-transform: uppercase;
+  box-shadow: 0 0 12px rgba(255, 60, 60, 0.8);
+}
+
+.btn-delete-user:hover {
+  background: linear-gradient(90deg, #ff1f1f, #ff4c4c);
+  box-shadow: 0 0 18px rgba(255, 50, 50, 1);
+}
+
+/* ============================ */
+/*   DATE OF BIRTH & COUNTRY INPUTS */
+/* ============================ */
+
+/* --- CREATE MODE (BLUE) --- */
+.create-input,
+.create-input[type="date"],
+.create-input select {
+  background-color: #00eaffcc !important;  
+  border: 2px solid #e0f0ff !important;    
+  border-radius: 0.25rem !important;
+  color: #000 !important;                  
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  -webkit-appearance: none;  
+  -moz-appearance: none;     
+  appearance: none;           
+}
+
+.create-input:focus,
+.create-input:active,
+.create-input[type="date"]:focus,
+.create-input[type="date"]:active,
+.create-input select:focus,
+.create-input select:active {
+  box-shadow: 0 0 12px #00eaff99;
+  transform: scale(1.02);
+}
+
+/* --- EDIT MODE (YELLOW) --- */
+.edit-input,
+.edit-input[type="date"],
+.edit-input select {
+  background-color: #ffcc33 !important;  
+  border: 2px solid #fff3cc !important;  
+  border-radius: 0.25rem !important;
+  color: #000 !important;
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  -webkit-appearance: none;  
+  -moz-appearance: none;     
+  appearance: none;           
+}
+
+.edit-input:focus,
+.edit-input:active,
+.edit-input[type="date"]:focus,
+.edit-input[type="date"]:active,
+.edit-input select:focus,
+.edit-input select:active {
+  box-shadow: 0 0 12px #ffcc3399;
+  transform: scale(1.02);
+}
+
+/* -------------------------- */
+/*   FORM TITLE               */
+/* -------------------------- */
+
+.form-title {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* -------------------------- */
+/*   BACK BUTTON              */
+/* -------------------------- */
+
+.btn-back {
+  background: linear-gradient(90deg, #3399ff, #66ccff);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.3s;
+  margin-bottom: 1rem;
+}
+
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(51, 153, 255, 0.6);
+  cursor: pointer;
+}
+
+/* -------------------------- */
+/*   CREATE MODE STYLING      */
+/* -------------------------- */
+
+.form-create .form-title {
+  color: #00c8ff;
+}
+
+.form-create label {
+  color: #0088cc;
+  font-weight: 600;
+}
+
+.form-create .form-control {
+  border-color: #00c8ff;
+}
+
+.form-create .form-control:focus {
+  border-color: #00e0ff;
+  box-shadow: 0 0 6px rgba(0, 200, 255, 0.5);
+}
+
+.form-create button {
+  background-color: #00bfff;
+  border-color: #00bfff;
+}
+
+.form-create button:hover {
+  background-color: #009acd;
+  border-color: #009acd;
+}
+
+
+
+/* -------------------------- */
+/*   EDIT MODE STYLING        */
+/* -------------------------- */
+
+.form-edit .form-title {
+  color: #ffb300; /* ámbar */
+}
+
+.form-edit label {
+  color: #e69900;
+  font-weight: 600;
+}
+
+.form-edit .form-control {
+  border-color: #ffb300;
+}
+
+.form-edit .form-control:focus {
+  border-color: #ffcc33;
+  box-shadow: 0 0 6px rgba(255, 193, 7, 0.5);
+}
+
+.form-edit button {
+  background-color: #ffb300;
+  border-color: #ffb300;
+  font-weight: bold;
+}
+
+.form-edit button:hover {
+  background-color: #e69900;
+  border-color: #e69900;
+}
+
+
+/* -------------------------- */
+/*   FOCUS GLOW - CREATE MODE */
+/* -------------------------- */
+
+.form-create .futuristic-input:focus,
+.form-create textarea.futuristic-input:focus {
+  outline: none !important;
+  border-color: #00eaff !important;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.7),
+              0 0 20px rgba(0, 234, 255, 0.5);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* -------------------------- */
+/*   FOCUS GLOW - EDIT MODE   */
+/* -------------------------- */
+
+.form-edit .futuristic-input:focus,
+.form-edit textarea.futuristic-input:focus {
+  outline: none !important;
+  border-color: #ffd65c !important;
+  box-shadow: 0 0 10px rgba(255, 214, 92, 0.7),
+              0 0 20px rgba(255, 214, 92, 0.5);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* -------------------------- */
+/*   BASE BORDER BY MODE      */
+/* -------------------------- */
+.form-create .futuristic-input {
+  border: 1px solid rgba(0, 200, 255, 0.5);
+}
+
+.form-edit .futuristic-input {
+  border: 1px solid rgba(255, 214, 92, 0.5);
+}

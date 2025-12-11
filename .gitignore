@@ -1,21 +1,13 @@
-# Node modules
-node_modules/
+# Node modules for backend and frontend
+backend/node_modules/
+frontend/node_modules/
 
-# Environment variables
-.env
+# Environment files
+backend/.env
+frontend/.env
+
+# Vite/React build
+frontend/dist/
 
 # Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# VS Code settings
-.vscode/
-
-# Optional: Mac or Windows temp files
-*.tmp
-*.swp
+*.log
