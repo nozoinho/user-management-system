@@ -1,0 +1,232 @@
+/* --- Main container --- */
+.userlist-container {
+  background-color: #0d0f16;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: #e6ffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 2rem;
+}
+
+/* --- Header section --- */
+.userlist-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;      
+  box-sizing: border-box;
+}
+
+/* --- AG Grid container --- */
+.userlist-grid {
+  height: 75vh;
+  width: 100vw;
+  margin: 0;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.08);
+  background-color: #0d0f16;
+}
+
+.ag-paging-button {
+  color: #00eaff !important;           
+  background-color: #d5e132 !important; 
+  border: none !important;            
+}
+
+.ag-paging-button:hover {
+  background-color: #00bfff !important; 
+  color: black !important;             
+}
+
+/* --- Root and viewport background --- */
+.userlist-grid .ag-root-wrapper,
+.userlist-grid .ag-root-wrapper-viewport,
+.userlist-grid .ag-center-cols-viewport,
+.userlist-grid .ag-body-viewport {
+  background-color: #0d0f16 !important;
+  color: #e6ffff !important;
+}
+
+/* --- Header cells --- */
+.userlist-grid .ag-header-cell {
+  background-color: #141827 !important;
+  color: #00eaff !important;
+  border-right: 1px solid #223046 !important;
+  font-weight: bold;
+  text-shadow: 0 0 6px rgba(0, 234, 255, 0.3);
+  text-align: center;
+}
+
+/* --- Data cells --- */
+.userlist-grid .ag-cell {
+  background-color: #0d0f16 !important;
+  color: #e6ffff !important;
+  border-bottom: 1px solid #16202e !important;
+  text-align: center;
+}
+
+/* Zebra striping for rows */
+.userlist-grid .ag-row:nth-child(even) .ag-cell {
+  background-color: #12142a !important;
+}
+
+/* Hover effect for rows */
+.userlist-grid .ag-row:hover .ag-cell {
+  background-color: #1b2338 !important;
+  transition: background 0.15s ease-in-out;
+}
+
+/* Selected row styling */
+.userlist-grid .ag-row-selected .ag-cell {
+  background-color: #1c2c3d !important;
+  box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.2);
+}
+
+/* Checkbox / range selection highlight */
+.userlist-grid .ag-checkbox-input:checked + .ag-checkbox-label .ag-icon,
+.userlist-grid .ag-range-selection .ag-cell {
+  background-color: rgba(0, 234, 255, 0.15) !important;
+}
+
+/* Overlay when no rows exist */
+.no-rows {
+  color: #00eaff;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* --- Custom scrollbar --- */
+.userlist-grid ::-webkit-scrollbar {
+  width: 8px;
+}
+.userlist-grid ::-webkit-scrollbar-track {
+  background: #0d0f16;
+}
+.userlist-grid ::-webkit-scrollbar-thumb {
+  background: #00eaff;
+  border-radius: 4px;
+}
+.userlist-grid ::-webkit-scrollbar-thumb:hover {
+  background: #00c9d9;
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+  .userlist-grid .ag-cell,
+  .userlist-grid .ag-header-cell {
+    font-size: 0.85rem;
+    padding: 0.4rem;
+  }
+}
+
+/* --- Footer / pagination panel --- */
+.userlist-grid .ag-paging-panel {
+  color: #009dff !important; 
+  font-weight: bold;
+  justify-content: center !important;
+}
+
+/* Header icons color adjustment (filter / sort) */
+.userlist-grid .ag-header-cell .ag-icon {
+  filter: invert(69%) sepia(100%) saturate(4000%) hue-rotate(175deg) brightness(100%) contrast(90%);
+}
+
+/* Header text always fully visible */
+.userlist-grid .ag-header-cell-label {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+userlist-grid .ag-header-cell {
+  overflow: visible !important;
+}
+
+.userlist-grid .ag-header-cell-text {
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+/* --- Adjust font size for long cell content (Email) --- */
+.userlist-grid .ag-cell {
+  font-size: 0.85rem; 
+  line-height: 1.2;   
+  white-space: normal !important;
+}
+
+/* Header cells wrap for long text */
+.userlist-grid .ag-header-cell-label {
+  white-space: normal !important; 
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.1;
+}
+
+/* --- Edit/Delete buttons --- */
+.btn-edit,
+.btn-delete {
+  border: none;
+  outline: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Edit button (yellow) */
+.btn-edit {
+  background-color: #f1c40f; /* amarillo dorado */
+  color: black;
+}
+
+.btn-edit:hover {
+  background-color: #d4ac0d;
+}
+
+/* Delete button (red) */
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+
+/* --- Add User Futuristic Button --- */
+.btn-add-user-futuristic {
+  background: linear-gradient(90deg, #00c8ff, #3385ff);
+  color: #0d1117;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(51, 204, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* Hover effect: scales and glows */
+.btn-add-user-futuristic:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 0 25px rgba(0, 255, 255, 1), 0 0 40px rgba(51, 204, 255, 0.8);
+  cursor: pointer;
+}
+
+/* Active / focus: slight pulse effect */
+.btn-add-user-futuristic:active,
+.btn-add-user-futuristic:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.9), 0 0 35px rgba(51, 204, 255, 0.7);
+  outline: none;
+}
